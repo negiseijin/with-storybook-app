@@ -1,0 +1,125 @@
+.progress2 {
+  progress {
+    width: 100%;
+    height: 20px;
+    appearance: none;
+    border: none;
+    margin: 20px 0;
+    background-color: black;
+    background-size: 0% 100%;
+    transition: background-size 0.5s linear;
+
+    // &[value="1"]::-webkit-progress-value {
+    //   background-color: green;
+    // }
+
+    // &::-webkit-progress-value {
+    //   background-color: blue;
+    // }
+
+    // &[value="100"]::-webkit-progress-value {
+    //   background-color: red;
+    // }
+
+    &::-webkit-progress-bar {
+      border-radius: 20px;
+    }
+    &[max="100"]::-webkit-progress-bar {
+      background-color: cornflowerblue;
+    }
+    &[max="10"]::-webkit-progress-bar {
+      background-color: yellow;
+    }
+
+    // &::-webkit-progress-inner-element {
+    //   // border-right: 2px solid black;
+    // }
+
+    // &-webkit-progress-value {
+    //   background-size: cover;
+    //   background-position: center center;
+    //   border-radius: 20px;
+    //   transition: background-image 0.5s ease-in-out;
+    // }
+
+    &.end {
+      &::-webkit-progress-value {
+        background-color: aqua;
+        // background-image: url('end.jpg');
+      }
+    }
+
+    &.start {
+      &::-webkit-progress-value {
+        background-color: red;
+        // background-image: url('start.jpg');
+      }
+    }
+
+    &.middle {
+      &::-webkit-progress-value {
+        background-color: green;
+        // background-image: url('middle.jpg');
+      }
+    }
+  }
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-bar {
+  position: relative;
+  width: 400px;
+}
+
+.progress-bar progress {
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #ddd;
+}
+
+.progress-bar progress::-webkit-progress-bar {
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+.progress-bar progress::-webkit-progress-value {
+  background-color: green;
+  border-radius: 5px;
+}
+
+.progress-bar progress[value="1"]::-webkit-progress-value {
+  background-color: blue;
+}
+
+.progress-bar progress[value="2"]::-webkit-progress-value {
+  background-color: red;
+}
+
+.step-arrow {
+  position: absolute;
+  top: -15px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid green;
+}
+
+.step-arrow:first-child {
+  left: calc(0% - 5px);
+}
+
+.step-arrow:nth-child(2) {
+  left: calc(50% - 5px);
+}
+
+.step-arrow:last-child {
+  right: calc(0% - 5px);
+}

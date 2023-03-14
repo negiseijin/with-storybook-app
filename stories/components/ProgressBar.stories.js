@@ -1,5 +1,9 @@
 import React from "react";
-import ProgressBar from "../../components/ProgressBar";
+import {
+  ProgressBar,
+  ProgressBar2,
+  ProgressBar3,
+} from "../../components/ProgressBar";
 
 export default {
   /* 👇 The title prop is optional.
@@ -17,21 +21,26 @@ export default {
         step: 1,
       },
     },
-    backgroundColor: { control: "color" },
-    color: { control: "color" },
     className: { control: "text" },
   },
 };
 
 const Template = (args) => <ProgressBar {...args} />;
+const Template2 = (args) => <ProgressBar2 {...args} />;
+const Template3 = (args) => <ProgressBar3 {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
   value: 50,
-  backgroundColor: "#eee",
-  color: "#000",
   className: "",
 };
-export const With50PercentProgress = () => <ProgressBar value={50} />;
-export const With25PercentProgress = () => <ProgressBar value={25} />;
-export const With75PercentProgress = () => <ProgressBar value={75} />;
+export const Default2 = Template2.bind({});
+Default2.args = {
+  value: 50,
+  max: 100,
+};
+export const Default3 = Template3.bind({});
+Default3.args = {
+  value: 0,
+  max: 2,
+};
